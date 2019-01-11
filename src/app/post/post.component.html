@@ -1,0 +1,22 @@
+<ul>
+  <div *ngFor = "let post of postList; 
+  let i = index" >
+  <h4>{{post.postHeader}}</h4>
+  <p>{{post.postBody}}</p><br><br>
+</div>
+</ul>
+
+
+<form>
+  <div class="form-group">
+  <label for="postHeader">Post Header</label><br>
+  <input required ngModel name ="postHeader" #postHeader="ngModel" (change)="log(postHeader)" id="postHeader" type="text" class="form-control" >
+</div>
+
+<div class="form-group">Comment<label for="" form="comment"><br>
+
+</label><textarea ngModel name="postBody" id="postBody" cols="30" rows="10" class="form-control">
+
+</textarea></div>
+<button (click) = "addNewPost()">Submit</button>
+</form>
